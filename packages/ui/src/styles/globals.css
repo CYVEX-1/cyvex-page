@@ -1,0 +1,491 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@source "../../../apps/**/*.{ts,tsx}";
+@source "../**/*.{ts,tsx}";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Light theme — premium clean */
+  --background: oklch(0.985 0.003 240);
+  --foreground: oklch(0.18 0.02 240);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.18 0.02 240);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.18 0.02 240);
+  --primary: oklch(0.62 0.16 220);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.95 0.01 240);
+  --secondary-foreground: oklch(0.22 0.02 240);
+  --muted: oklch(0.95 0.005 240);
+  --muted-foreground: oklch(0.48 0.015 240);
+  --accent: oklch(0.72 0.18 215);
+  --accent-foreground: oklch(0.16 0.02 240);
+  --destructive: oklch(0.58 0.22 27);
+  --border: oklch(0.9 0.005 240);
+  --input: oklch(0.92 0.005 240);
+  --ring: oklch(0.62 0.16 220);
+  --chart-1: oklch(0.72 0.18 215);
+  --chart-2: oklch(0.62 0.16 220);
+  --chart-3: oklch(0.55 0.14 230);
+  --chart-4: oklch(0.48 0.12 240);
+  --chart-5: oklch(0.4 0.1 250);
+  --radius: 0.75rem;
+  --sidebar: oklch(0.98 0.003 240);
+  --sidebar-foreground: oklch(0.18 0.02 240);
+  --sidebar-primary: oklch(0.62 0.16 220);
+  --sidebar-primary-foreground: oklch(0.99 0 0);
+  --sidebar-accent: oklch(0.95 0.01 240);
+  --sidebar-accent-foreground: oklch(0.22 0.02 240);
+  --sidebar-border: oklch(0.9 0.005 240);
+  --sidebar-ring: oklch(0.62 0.16 220);
+
+  /* Cyvex brand custom tokens */
+  --cyvex-cyan: oklch(0.78 0.16 210);
+  --cyvex-cyan-strong: oklch(0.72 0.19 215);
+  --cyvex-blue: oklch(0.58 0.18 245);
+  --cyvex-violet: oklch(0.62 0.2 290);
+  --cyvex-grid: oklch(0.92 0.005 240 / 0.6);
+}
+
+.dark {
+  /* Dark theme — deep cyber */
+  --background: oklch(0.12 0.012 240);
+  --foreground: oklch(0.97 0.005 240);
+  --card: oklch(0.16 0.015 240);
+  --card-foreground: oklch(0.97 0.005 240);
+  --popover: oklch(0.14 0.015 240);
+  --popover-foreground: oklch(0.97 0.005 240);
+  --primary: oklch(0.82 0.16 205);
+  --primary-foreground: oklch(0.12 0.015 240);
+  --secondary: oklch(0.22 0.018 240);
+  --secondary-foreground: oklch(0.97 0.005 240);
+  --muted: oklch(0.2 0.015 240);
+  --muted-foreground: oklch(0.68 0.012 240);
+  --accent: oklch(0.78 0.18 210);
+  --accent-foreground: oklch(0.12 0.015 240);
+  --destructive: oklch(0.7 0.2 22);
+  --border: oklch(0.97 0.005 240 / 0.08);
+  --input: oklch(0.97 0.005 240 / 0.1);
+  --ring: oklch(0.78 0.18 210);
+  --chart-1: oklch(0.82 0.16 205);
+  --chart-2: oklch(0.7 0.18 220);
+  --chart-3: oklch(0.6 0.18 245);
+  --chart-4: oklch(0.55 0.18 275);
+  --chart-5: oklch(0.6 0.2 300);
+  --sidebar: oklch(0.14 0.015 240);
+  --sidebar-foreground: oklch(0.97 0.005 240);
+  --sidebar-primary: oklch(0.82 0.16 205);
+  --sidebar-primary-foreground: oklch(0.12 0.015 240);
+  --sidebar-accent: oklch(0.22 0.018 240);
+  --sidebar-accent-foreground: oklch(0.97 0.005 240);
+  --sidebar-border: oklch(0.97 0.005 240 / 0.08);
+  --sidebar-ring: oklch(0.78 0.18 210);
+
+  /* Cyvex brand custom tokens (dark) */
+  --cyvex-cyan: oklch(0.82 0.16 205);
+  --cyvex-cyan-strong: oklch(0.88 0.17 200);
+  --cyvex-blue: oklch(0.65 0.18 245);
+  --cyvex-violet: oklch(0.68 0.2 290);
+  --cyvex-grid: oklch(0.97 0.005 240 / 0.06);
+}
+
+@theme inline {
+  --font-sans: "Inter Variable", "Inter", system-ui, -apple-system, sans-serif;
+  --font-mono: "JetBrains Mono", "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-cyvex-cyan: var(--cyvex-cyan);
+  --color-cyvex-cyan-strong: var(--cyvex-cyan-strong);
+  --color-cyvex-blue: var(--cyvex-blue);
+  --color-cyvex-violet: var(--cyvex-violet);
+  --color-cyvex-grid: var(--cyvex-grid);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --animate-grid-scroll: grid-scroll 24s linear infinite;
+  --animate-aurora: aurora 12s ease-in-out infinite alternate;
+  --animate-shimmer: shimmer 2.5s linear infinite;
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
+  --animate-scan: scan 3s linear infinite;
+  --animate-blink: blink 1s steps(2, start) infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  --animate-fade-in: fade-in 0.6s ease-out both;
+  --animate-ping-slow: ping-slow 3s cubic-bezier(0, 0, 0.2, 1) infinite;
+  --animate-marquee: marquee 30s linear infinite;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    @apply font-sans bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+  }
+
+  ::selection {
+    background-color: oklch(0.82 0.16 205 / 0.3);
+    color: var(--foreground);
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: oklch(0.97 0.005 240 / 0.1);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: oklch(0.82 0.16 205 / 0.4);
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism */
+  .glass {
+    background: color-mix(in oklab, var(--card) 65%, transparent);
+    backdrop-filter: blur(18px) saturate(180%);
+    -webkit-backdrop-filter: blur(18px) saturate(180%);
+    border: 1px solid color-mix(in oklab, var(--foreground) 8%, transparent);
+  }
+  .glass-strong {
+    background: color-mix(in oklab, var(--card) 80%, transparent);
+    backdrop-filter: blur(24px) saturate(200%);
+    -webkit-backdrop-filter: blur(24px) saturate(200%);
+    border: 1px solid color-mix(in oklab, var(--foreground) 10%, transparent);
+  }
+
+  /* Gradient text */
+  .text-gradient-cyber {
+    background-image: linear-gradient(
+      90deg,
+      var(--cyvex-cyan-strong) 0%,
+      var(--cyvex-cyan) 35%,
+      var(--cyvex-blue) 70%,
+      var(--cyvex-violet) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-gradient-soft {
+    background-image: linear-gradient(
+      180deg,
+      var(--foreground) 0%,
+      color-mix(in oklab, var(--foreground) 55%, transparent) 100%
+    );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Backgrounds */
+  .bg-grid {
+    background-image:
+      linear-gradient(to right, var(--cyvex-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--cyvex-grid) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-grid-sm {
+    background-image:
+      linear-gradient(to right, var(--cyvex-grid) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--cyvex-grid) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+  .bg-dots {
+    background-image: radial-gradient(
+      circle at 1px 1px,
+      var(--cyvex-grid) 1px,
+      transparent 0
+    );
+    background-size: 22px 22px;
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.5 0'/></filter><rect width='100%' height='100%' filter='url(%23n)' opacity='0.5'/></svg>");
+  }
+  .bg-radial-fade {
+    background: radial-gradient(
+      ellipse at center,
+      transparent 0%,
+      var(--background) 75%
+    );
+  }
+
+  /* Borders / cards */
+  .border-cyber {
+    border: 1px solid color-mix(in oklab, var(--cyvex-cyan) 22%, transparent);
+  }
+  .ring-cyber {
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--cyvex-cyan) 18%, transparent),
+      0 0 32px -8px color-mix(in oklab, var(--cyvex-cyan) 35%, transparent);
+  }
+  .glow-cyan {
+    box-shadow:
+      0 0 24px -4px color-mix(in oklab, var(--cyvex-cyan) 55%, transparent),
+      0 0 60px -10px color-mix(in oklab, var(--cyvex-cyan) 35%, transparent);
+  }
+  .glow-cyan-sm {
+    box-shadow: 0 0 18px -4px color-mix(in oklab, var(--cyvex-cyan) 45%, transparent);
+  }
+
+  /* Conic / aurora gradients */
+  .bg-aurora {
+    background-image:
+      radial-gradient(ellipse 80% 50% at 50% -10%, color-mix(in oklab, var(--cyvex-cyan) 28%, transparent), transparent 60%),
+      radial-gradient(ellipse 60% 50% at 20% 30%, color-mix(in oklab, var(--cyvex-blue) 22%, transparent), transparent 55%),
+      radial-gradient(ellipse 50% 50% at 80% 70%, color-mix(in oklab, var(--cyvex-violet) 18%, transparent), transparent 55%);
+  }
+
+  /* Shimmer button helper */
+  .btn-shimmer {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+  }
+  .btn-shimmer::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      120deg,
+      transparent 30%,
+      color-mix(in oklab, var(--cyvex-cyan) 35%, transparent) 50%,
+      transparent 70%
+    );
+    transform: translateX(-100%);
+    transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: -1;
+  }
+  .btn-shimmer:hover::after {
+    transform: translateX(100%);
+  }
+
+  /* Animated gradient border (used on cards) */
+  .card-cyber {
+    position: relative;
+    background-color: color-mix(in oklab, var(--card) 80%, transparent);
+    border: 1px solid color-mix(in oklab, var(--foreground) 8%, transparent);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-cyber:hover {
+    border-color: color-mix(in oklab, var(--cyvex-cyan) 35%, transparent);
+    box-shadow:
+      0 0 0 1px color-mix(in oklab, var(--cyvex-cyan) 18%, transparent),
+      0 22px 60px -28px color-mix(in oklab, var(--cyvex-cyan) 55%, transparent);
+    transform: translateY(-2px);
+  }
+  .card-cyber::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      color-mix(in oklab, var(--cyvex-cyan) 0%, transparent),
+      color-mix(in oklab, var(--cyvex-cyan) 30%, transparent),
+      color-mix(in oklab, var(--cyvex-cyan) 0%, transparent)
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+  }
+  .card-cyber:hover::before {
+    opacity: 1;
+  }
+
+  /* Scanline overlay */
+  .scanlines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 2px,
+      color-mix(in oklab, var(--foreground) 4%, transparent) 3px
+    );
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+  .mask-fade-t {
+    -webkit-mask-image: linear-gradient(to top, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to top, #000 60%, transparent 100%);
+  }
+  .mask-radial-fade {
+    -webkit-mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+    mask-image: radial-gradient(ellipse at center, #000 40%, transparent 75%);
+  }
+}
+
+@keyframes grid-scroll {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 56px 56px;
+  }
+}
+
+@keyframes aurora {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(2%, -2%, 0) rotate(8deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate3d(-2%, 2%, 0) rotate(-8deg);
+    opacity: 0.7;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  10%, 90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}

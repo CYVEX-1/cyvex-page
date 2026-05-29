@@ -1,0 +1,3 @@
+{
+  "extends": "@cyvex-page/config/tsconfig.base.json"
+}
