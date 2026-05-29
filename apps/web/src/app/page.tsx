@@ -9,19 +9,19 @@ import { Investigation } from "@/components/sections/investigation";
 import { RedTeam } from "@/components/sections/red-team";
 
 export default function Home() {
-  return (
-    <>
-      <Navbar />
-      <main className="relative">
-        <Hero />
-        <About />
-        <BlueTeam />
-        <RedTeam />
-        <Investigation />
-        <Differentials />
-        <CTA />
-      </main>
-      <SiteFooter />
-    </>
-  );
+	return (
+		<>
+			<Navbar />
+			<main className="relative">
+				<Hero />
+				<About />
+				<BlueTeam />
+				<RedTeam />
+				<Investigation />
+				<Differentials />
+				<CTA />
+			</main>
+			<SiteFooter />
+		</>
+	);
 }

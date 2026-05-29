@@ -1,0 +1,48 @@
+---
+description: Cyvex monorepo overview, stack and brand
+alwaysApply: true
+---
+
+# Cyvex — Visão Geral do Projeto
+
+Website institucional da **Cyvex**, empresa de cibersegurança (Blue Team, Red Team, Pentest, Engenharia Social, Investigação Social).
+
+## Stack
+
+- **Monorepo**: Turbo + npm workspaces (`apps/*`, `packages/*`)
+- **App**: `apps/web` — Next.js 16 (App Router), React 19, React Compiler
+- **UI**: `packages/ui` (`@cyvex-page/ui`) — base-ui primitives, CVA, Tailwind v4
+- **Styles**: Tailwind CSS v4 (sintaxe `@theme inline` e `@source`), `tw-animate-css`, `shadcn/tailwind.css`
+- **Ícones**: `lucide-react`
+- **Tema**: `next-themes` — **dark é o default**, classe `dark` no `<html>`
+- **Fontes**: Inter (sans) + JetBrains Mono (mono)
+- **Lint/Format**: Biome (`npm run check`)
+- **Idioma**: pt-BR (conteúdo, metadata, comentários quando necessário)
+
+## Estrutura essencial
+
+```
+apps/web/src/
+  app/                 # rotas Next.js (layout.tsx, page.tsx, metadata)
+  components/
+    brand/             # Logo, CyberBg (decorações de marca)
+    sections/          # Seções de marketing (Hero, About, BlueTeam, ...)
+    navbar.tsx         # navbar global sticky
+    providers.tsx      # ThemeProvider + Toaster
+packages/ui/src/
+  components/          # primitivos compartilhados (button, card, input, ...)
+  lib/utils.ts         # `cn()` helper
+  styles/globals.css   # design tokens, animações, utilitários
+```
+
+## Imports
+
+- `@/*` → `apps/web/src/*`
+- `@cyvex-page/ui/components/*` → primitivos
+- `@cyvex-page/ui/lib/utils` → `cn`
+
+## Marca
+
+- Identidade: moderna, tecnológica, minimalista, futurista, corporativa
+- Cores: tons profundos de cinza/preto + cyan (`--cyvex-cyan`), azul (`--cyvex-blue`) e violeta (`--cyvex-violet`) como acentos
+- Tom de voz: confiante, técnico, sóbrio — sem hype "hacker", sempre corporativo premium

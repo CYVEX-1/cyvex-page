@@ -5,15 +5,15 @@ import { Toaster } from "@cyvex-page/ui/components/sonner";
 import { ThemeProvider } from "./theme-provider";
 
 export default function Providers({ children }: { children: React.ReactNode }) {
-  return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="dark"
-      enableSystem={false}
-      disableTransitionOnChange
-    >
-      {children}
-      <Toaster richColors theme="dark" />
-    </ThemeProvider>
-  );
+	return (
+		<ThemeProvider
+			attribute="class"
+			defaultTheme="dark"
+			enableSystem={false}
+			disableTransitionOnChange
+		>
+			{children}
+			<Toaster richColors theme="dark" />
+		</ThemeProvider>
+	);
 }

@@ -1,0 +1,58 @@
+---
+description: Voz da marca Cyvex, tom de copy e padrões de conteúdo pt-BR
+alwaysApply: true
+---
+
+# Marca Cyvex — Voz, Tom e Conteúdo
+
+## Idioma
+
+Todo conteúdo voltado para usuário em **português brasileiro (pt-BR)**. Inclui:
+
+- Textos visíveis na UI
+- Metadata (`title`, `description`, OG, Twitter)
+- `aria-label`, `alt`, mensagens de erro
+- Nomes de seção e CTAs
+
+Comentários técnicos no código podem ser em inglês quando convencional (ex.: descrição de animação CSS), mas prefira pt-BR para guidance de negócio.
+
+## Tom de voz
+
+- **Confiante, sóbrio, técnico, autoral.**
+- Foco em **autoridade e conversão**, não em hype.
+- Evite "hacker culture" caricata (matrix, "we will hack you" etc.).
+- Use vocabulário técnico correto: SOC, NOC, SIEM, EDR, NDR, SOAR, OSINT, MITRE ATT&CK, MTTR, Zero Trust, NGFW, CASB, CSPM, OWASP, NIST CSF, PTES, LGPD, ISO 27001/27701.
+- Frases curtas, claras. Sempre que possível, com **número** ou **prova social**.
+
+### ✅ Bom
+> "Antecipamos, neutralizamos e respondemos a ameaças cibernéticas com precisão e ética."
+
+### ❌ Evite
+> "Somos hackers do bem e vamos destruir os bad guys!"
+
+## Estrutura típica de copy
+
+- **Eyebrow** (badge): 2–4 palavras, categoria (`Blue Team`, `Sobre a Cyvex`).
+- **Heading**: 1 frase com palavra-chave em `text-gradient-cyber`.
+- **Subhead**: 1–3 linhas, valor + proposta.
+- **CTA primário**: verbo + objeto curto (`Solicitar análise`, `Falar com especialista`, `Agendar consultoria`).
+- **CTA secundário**: alternativa neutra (`Conhecer soluções`, `Ver diferenciais`).
+
+## Áreas de atuação (nomenclatura oficial)
+
+- **Blue Team** — defesa, SOC, monitoramento contínuo
+- **Red Team** — ofensiva, simulação de ataques
+- **Pentest** — Web, Mobile, IoT, Redes
+- **Engenharia Social** — phishing, vishing, smishing
+- **Investigação Social** — OSINT, due diligence digital, proteção de identidade
+- **Segurança Ofensiva** / **Segurança Defensiva** — termos institucionais
+
+## Públicos
+
+Atendemos **empresas** e **pessoas físicas**. Em seções de investigação/proteção, separe claramente os dois públicos.
+
+## SEO
+
+Keywords primárias: `cibersegurança`, `cybersecurity`, `pentest`, `blue team`, `red team`, `engenharia social`, `investigação digital`, `segurança ofensiva`, `segurança defensiva`, `SOC`, `Cyvex`.
+
+Sempre preencher: `title`, `description`, `openGraph`, `twitter` em metadata de novas páginas.

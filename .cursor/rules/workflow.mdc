@@ -1,0 +1,53 @@
+---
+description: Comandos, scripts e fluxo de trabalho do monorepo
+alwaysApply: true
+---
+
+# Fluxo de Trabalho — Monorepo Cyvex
+
+## Comandos (raiz)
+
+| Comando             | Descrição                                  |
+|---------------------|--------------------------------------------|
+| `npm run dev`       | Inicia todos os apps (turbo)               |
+| `npm run dev:web`   | Inicia apenas `apps/web` (porta 3001)      |
+| `npm run build`     | Build de produção (todos os pacotes)       |
+| `npm run check-types` | TypeScript em todo o monorepo            |
+| `npm run check`     | **Biome** (lint + format **com `--write`**)|
+
+> Sempre rode `npm run check` antes de finalizar uma task que modifica código.
+
+## Adicionar dependência
+
+- **App web**: `npm install <pkg> -w web`
+- **UI**: `npm install <pkg> -w @cyvex-page/ui`
+- **Dev tools globais**: `npm install -D <pkg> -w <workspace>`
+
+❌ Não rode `npm install <pkg>` na raiz sem `-w` (vai para a root e não é o que queremos para libs de runtime).
+
+## Estrutura de arquivos (onde colocar o quê)
+
+- **Nova seção da landing** → `apps/web/src/components/sections/<nome>.tsx`
+- **Componente compartilhado entre apps** → `packages/ui/src/components/<nome>.tsx`
+- **Decoração visual da marca** → `apps/web/src/components/brand/<nome>.tsx`
+- **Token / utilitário CSS** → `packages/ui/src/styles/globals.css`
+- **Hook reusável** → `packages/ui/src/hooks/<nome>.ts` (com export em `package.json`)
+
+## Convenções de nome
+
+- Arquivos: `kebab-case.tsx` (`blue-team.tsx`, `cyber-bg.tsx`)
+- Componentes exportados: `PascalCase` (`BlueTeam`, `CyberBg`)
+- Constantes top-level: `UPPER_SNAKE_CASE` (`NAV_LINKS`, `SERVICES`)
+- IDs de seção (`id="..."`): `kebab-case`
+
+## Git
+
+- Mensagens em pt-BR ou inglês, curtas e descritivas.
+- Não commitar `.env*`, `node_modules`, `.next`, `.turbo` (já cobertos por `.gitignore`).
+
+## Antes de finalizar uma task
+
+1. `npm run check` (Biome)
+2. `npm run check-types` (TS)
+3. Confira que a página renderiza no `dev:web`.
+4. Verifique responsividade nos breakpoints `sm`, `lg`.

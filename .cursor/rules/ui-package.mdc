@@ -1,0 +1,71 @@
+---
+description: Convenções para primitivos do pacote @cyvex-page/ui
+globs: packages/ui/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# Pacote `@cyvex-page/ui`
+
+Primitivos compartilhados, baseados em **`@base-ui/react`**, estilizados com Tailwind v4 e variantes via **`class-variance-authority`**.
+
+## Padrão de componente
+
+```tsx
+import { Button as ButtonPrimitive } from "@base-ui/react/button";
+import { cn } from "@cyvex-page/ui/lib/utils";
+import { cva, type VariantProps } from "class-variance-authority";
+
+const buttonVariants = cva("base classes", {
+  variants: {
+    variant: { default: "...", outline: "..." },
+    size: { default: "h-8", lg: "h-9" },
+  },
+  defaultVariants: { variant: "default", size: "default" },
+});
+
+function Button({
+  className,
+  variant = "default",
+  size = "default",
+  ...props
+}: ButtonPrimitive.Props & VariantProps<typeof buttonVariants>) {
+  return (
+    <ButtonPrimitive
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
+
+export { Button, buttonVariants };
+```
+
+## Regras
+
+- **Sempre** `data-slot="<nome>"` para hooks de CSS externos.
+- Use tokens semânticos (`bg-primary`, `text-foreground`) — nunca cores fixas.
+- Variantes via `cva`, props tipadas com `VariantProps<typeof xVariants>`.
+- Tamanhos compactos por padrão (`text-xs`, `h-8`) — UI densa típica.
+- Não adicione "use client" — primitivos são neutros e usados em ambos os ambientes.
+- Exporte sempre o componente **e** o `variants` (para reuso/extensão).
+
+## Exports
+
+Os exports do package são via `exports` no `package.json`:
+
+```json
+"./components/*": "./src/components/*.tsx",
+"./lib/*": "./src/lib/*.ts",
+"./globals.css": "./src/styles/globals.css"
+```
+
+Para criar novo componente: salve em `src/components/<nome>.tsx`. Import no app vira `@cyvex-page/ui/components/<nome>`.
+
+## CSS / Tokens
+
+`src/styles/globals.css` é a **única fonte** de tokens e utilitários da marca. Novas variáveis devem:
+
+1. Ser declaradas em `:root` (light) e `.dark`.
+2. Ser expostas no `@theme inline` como `--color-<nome>: var(--<nome>)`.
+3. Ter um utilitário Tailwind associado quando fizer sentido.

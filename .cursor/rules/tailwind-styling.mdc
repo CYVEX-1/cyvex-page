@@ -1,0 +1,67 @@
+---
+description: Tailwind v4 design system, tokens e utilitários Cyvex
+globs: **/*.{tsx,css}
+alwaysApply: false
+---
+
+# Estilização — Tailwind v4 + Design System Cyvex
+
+## Tokens (definidos em `packages/ui/src/styles/globals.css`)
+
+Use **sempre** os tokens semânticos, nunca cores hardcoded:
+
+| Token CSS / Tailwind        | Uso                              |
+|-----------------------------|----------------------------------|
+| `bg-background` / `text-foreground` | base                       |
+| `bg-card`, `bg-muted`, `bg-secondary` | superfícies              |
+| `text-muted-foreground`     | texto secundário                 |
+| `border-border`             | bordas padrão                    |
+| `bg-cyvex-cyan` / `text-cyvex-cyan-strong` | acento primário (cyan) |
+| `bg-cyvex-blue`             | acento secundário (azul profundo)|
+| `bg-cyvex-violet`           | acento Red Team                  |
+
+❌ Não use `text-blue-500`, `bg-zinc-900` etc. — sempre tokens da marca.
+
+## Utilitários custom disponíveis
+
+- `glass` / `glass-strong` — glassmorphism (backdrop-blur + bg semi-transparente)
+- `text-gradient-cyber` / `text-gradient-soft` — texto em gradiente
+- `bg-grid` / `bg-grid-sm` / `bg-dots` — backgrounds tecnológicos
+- `bg-aurora` — gradientes radiais decorativos
+- `card-cyber` — card com hover (border glow, translateY)
+- `btn-shimmer` — efeito shimmer em CTAs
+- `ring-cyber` / `glow-cyan` / `glow-cyan-sm` — anéis e brilhos
+- `mask-radial-fade` / `mask-fade-b` / `mask-fade-t` — máscaras de fade
+- `scanlines` — overlay de scanlines
+
+## Animações
+
+Use as utilidades `animate-*` definidas no `@theme`:
+`animate-aurora`, `animate-float`, `animate-glow-pulse`, `animate-scan`, `animate-blink`, `animate-fade-up`, `animate-fade-in`, `animate-ping-slow`, `animate-shimmer`, `animate-marquee`, `animate-grid-scroll`.
+
+Para delays: `[animation-delay:-4s]`.
+
+## `cn()` helper
+
+Combine classes condicionais sempre via `cn()`:
+
+```tsx
+import { cn } from "@cyvex-page/ui/lib/utils";
+
+<div className={cn("base-classes", scrolled && "glass border-border/60", className)} />
+```
+
+## Layout
+
+- Container padrão das seções: `mx-auto w-full max-w-7xl px-4 sm:px-6`
+- Espaçamento vertical entre seções: `py-24 sm:py-32`
+- Headings: `text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight text-balance`
+- Body: `text-base sm:text-lg leading-relaxed text-muted-foreground text-pretty`
+
+## Responsividade
+
+Mobile-first sempre. Breakpoints usados: `sm` (640), `md` (768), `lg` (1024), `xl` (1280).
+
+## Performance
+
+Animações via CSS (`@keyframes`). Evite libs JS de animação. Sempre `will-change` implícito via transformações simples (`translate`, `scale`, `opacity`).

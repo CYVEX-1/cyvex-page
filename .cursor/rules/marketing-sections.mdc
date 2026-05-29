@@ -1,0 +1,83 @@
+---
+description: Padrão de seções de marketing do site Cyvex
+globs: apps/web/src/components/sections/**/*.tsx
+alwaysApply: false
+---
+
+# Seções de Marketing
+
+Cada arquivo em `apps/web/src/components/sections/` é **uma seção da landing page**. Mantenha-as **server components** (sem `"use client"`) sempre que possível.
+
+## Anatomia padrão
+
+```tsx
+import { CyberBg } from "@/components/brand/cyber-bg";
+
+export function MinhaSecao() {
+  return (
+    <section id="slug-da-secao" className="relative isolate overflow-hidden py-24 sm:py-32">
+      <CyberBg variant="grid" /> {/* ou "dots" | "aurora" | "minimal" */}
+
+      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+        {/* Eyebrow badge */}
+        <span className="inline-flex items-center gap-2 rounded-full border border-cyvex-cyan/25 bg-cyvex-cyan/8 px-3 py-1 text-xs font-medium text-cyvex-cyan-strong">
+          <span className="size-1.5 rounded-full bg-cyvex-cyan" /> Nome da seção
+        </span>
+
+        {/* Heading */}
+        <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
+          Título com <span className="text-gradient-cyber">destaque</span>.
+        </h2>
+
+        {/* Subtítulo */}
+        <p className="mt-5 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
+          ...
+        </p>
+
+        {/* Grid de cards */}
+        <div className="mt-12 grid gap-5 sm:mt-14 md:grid-cols-2 lg:grid-cols-3">
+          {items.map(...)}
+        </div>
+      </div>
+    </section>
+  );
+}
+```
+
+## Regras
+
+- **`id` obrigatório** na `<section>` — usado pela Navbar para âncoras.
+- **`relative isolate overflow-hidden`** para conter glows e backgrounds.
+- Dados (lista de itens, services, stats) declarados como `const ARRAY` no topo, com `as const` quando aplicável.
+- Tipagem de ícones: `type LucideIcon` de `lucide-react`.
+- Heading sempre h2 (h1 é exclusivo do Hero).
+- Use `text-balance` em headings e `text-pretty` em parágrafos longos.
+- Cards de serviço: classe `card-cyber` + ícone em quadrado `size-10/11` com border + bg de acento.
+- Hover: `group/<nome>` na raiz + `group-hover/<nome>:` nos filhos para isolar grupos quando há múltiplos.
+
+## Âncoras válidas (sincronizadas com `Navbar`)
+
+`#sobre`, `#blue-team`, `#red-team`, `#investigacao`, `#diferenciais`, `#contato`.
+
+Ao criar nova seção, **adicione o item correspondente em `navbar.tsx`** (`NAV_LINKS`).
+
+## CTAs padrão
+
+```tsx
+{/* Primary */}
+<Link
+  href="#contato"
+  className="btn-shimmer group inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-cyvex-cyan-strong via-cyvex-cyan to-cyvex-blue px-6 py-3.5 text-sm font-semibold text-background shadow-[0_18px_50px_-18px_var(--cyvex-cyan)] transition-transform hover:scale-[1.02]"
+>
+  Texto do CTA
+  <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" />
+</Link>
+
+{/* Secondary */}
+<Link
+  href="#sobre"
+  className="inline-flex items-center justify-center gap-2 rounded-full border border-border/70 bg-background/40 px-6 py-3.5 text-sm font-semibold text-foreground/90 backdrop-blur transition-colors hover:border-cyvex-cyan/40 hover:text-foreground"
+>
+  Texto secundário
+</Link>
+```

@@ -1,0 +1,57 @@
+---
+description: TypeScript + React 19 + Next.js 16 conventions
+globs: apps/web/**/*.{ts,tsx},packages/**/*.{ts,tsx}
+alwaysApply: false
+---
+
+# TypeScript / React / Next.js
+
+## Componentes
+
+- Sempre **functional components** com tipagem inline:
+  ```tsx
+  export function Hero({ title }: { title: string }) { ... }
+  ```
+- Use `type` para props simples; `interface` apenas se precisar extender/merge.
+- Importações `type`-only com `import type` (projeto usa `verbatimModuleSyntax: true`).
+
+## Server vs Client
+
+- **Server Components por padrão** em `apps/web/src/app/**` e `components/sections/**`.
+- Adicione `"use client"` apenas quando houver: hooks (`useState`, `useEffect`), eventos, APIs de browser ou `next-themes`.
+- Componentes de marca/seções estáticas **não devem** ter `"use client"`.
+
+## Next.js 16 (App Router)
+
+- Use `typedRoutes` — links internos para hash devem ser cast: `href={"#blue-team" as never}`.
+- Metadata fica em `app/layout.tsx` (e `app/<route>/page.tsx` quando necessário).
+- Imagens externas via `next/image` com domínio em `next.config.ts`.
+- **React Compiler está ativo**: não memoize manualmente (`useMemo`, `useCallback`, `memo`) salvo medição comprovar ganho.
+
+## Hooks e estado
+
+- Side-effects de scroll/listener sempre com cleanup:
+  ```tsx
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 12);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+  ```
+
+## Ícones
+
+- Sempre `lucide-react`. Use `type LucideIcon` para tipar props de ícone.
+- Tamanhos via classes Tailwind (`size-4`, `size-5`).
+
+## Acessibilidade
+
+- `aria-label` em ícones-only buttons, `aria-expanded` em toggles.
+- `aria-hidden="true"` em camadas decorativas (backgrounds, glows).
+- Botões mobile devem fechar menu ao navegar.
+
+## Anti-patterns
+
+- ❌ Inline `style` para coisas que Tailwind resolve.
+- ❌ `any` — prefira `unknown` + narrowing.
+- ❌ Comentários óbvios (`// import X`). Comente apenas intenção/trade-off.
