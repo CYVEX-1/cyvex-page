@@ -98,7 +98,7 @@ export function Logo({ className, showWordmark = true, size = 28 }: LogoProps) {
 			{showWordmark && (
 				<span className="font-semibold text-base tracking-tight">
 					<span className="text-foreground">CY</span>
-					<span className="text-gradient-cyber">VEX</span>
+					<span className="text-cyvex-blue">VEX</span>
 				</span>
 			)}
 		</div>

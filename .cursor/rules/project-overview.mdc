@@ -44,5 +44,5 @@ packages/ui/src/
 ## Marca
 
 - Identidade: moderna, tecnológica, minimalista, futurista, corporativa
-- Cores: tons profundos de cinza/preto + cyan (`--cyvex-cyan`), azul (`--cyvex-blue`) e violeta (`--cyvex-violet`) como acentos
+- Cores: tons profundos de cinza/preto + cyan (`--cyvex-cyan`), azul (`--cyvex-blue`) e vermelho (`--cyvex-red`) como acentos
 - Tom de voz: confiante, técnico, sóbrio — sem hype "hacker", sempre corporativo premium

@@ -33,7 +33,7 @@ Comentários técnicos no código podem ser em inglês quando convencional (ex.:
 ## Estrutura típica de copy
 
 - **Eyebrow** (badge): 2–4 palavras, categoria (`Blue Team`, `Sobre a Cyvex`).
-- **Heading**: 1 frase com palavra-chave em `text-gradient-cyber`.
+- **Heading**: 1 frase com palavra-chave em `text-cyvex-blue`.
 - **Subhead**: 1–3 linhas, valor + proposta.
 - **CTA primário**: verbo + objeto curto (`Solicitar análise`, `Falar com especialista`, `Agendar consultoria`).
 - **CTA secundário**: alternativa neutra (`Conhecer soluções`, `Ver diferenciais`).

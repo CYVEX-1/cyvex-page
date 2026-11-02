@@ -72,7 +72,7 @@ export function About() {
 					</span>
 					<h2 className="mt-5 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
 						Autoridade em{" "}
-						<span className="text-gradient-cyber">cibersegurança</span> para um
+						<span className="text-cyvex-cyan">cibersegurança</span> para um
 						mundo em constante ataque.
 					</h2>
 					<p className="mt-5 text-pretty text-base text-muted-foreground leading-relaxed sm:text-lg">

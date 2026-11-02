@@ -83,7 +83,7 @@ export function BlueTeam() {
 							<span className="size-1.5 rounded-full bg-cyvex-cyan" /> Blue Team
 						</span>
 						<h2 className="mt-4 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
-							Defesa <span className="text-gradient-cyber">corporativa</span> de
+							Defesa <span className="text-cyvex-blue">corporativa</span> de
 							elite, em camadas.
 						</h2>
 					</div>
@@ -173,7 +173,7 @@ function SocMetric({
 				</span>
 			</div>
 			<div className="mt-4 font-semibold text-3xl tracking-tight sm:text-4xl">
-				<span className={highlight ? "text-gradient-cyber" : "text-foreground"}>
+				<span className={highlight ? "text-cyvex-blue" : "text-foreground"}>
 					{value}
 				</span>
 			</div>

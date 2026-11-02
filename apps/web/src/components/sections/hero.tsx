@@ -35,7 +35,7 @@ export function Hero() {
 
 			{/* Scanline accent */}
 			<div className="pointer-events-none absolute inset-x-0 top-20 -z-10 h-px bg-gradient-to-r from-transparent via-cyvex-cyan/60 to-transparent" />
-			<div className="pointer-events-none absolute inset-x-0 bottom-12 -z-10 h-px bg-gradient-to-r from-transparent via-cyvex-violet/40 to-transparent" />
+			<div className="pointer-events-none absolute inset-x-0 bottom-12 -z-10 h-px bg-gradient-to-r from-transparent via-cyvex-red/40 to-transparent" />
 
 			<div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
 				<div className="grid items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14">
@@ -54,7 +54,7 @@ export function Hero() {
 							<span className="text-foreground">
 								Protegendo empresas e pessoas contra{" "}
 							</span>
-							<span className="text-gradient-cyber">
+							<span className="text-cyvex-blue">
 								ameaças digitais avançadas
 							</span>
 							<span className="text-foreground">.</span>
@@ -98,7 +98,7 @@ export function Hero() {
 					{/* Right column - Terminal visual */}
 					<div className="relative animate-fade-up [animation-delay:120ms]">
 						<div className="relative">
-							<div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-cyvex-cyan/20 via-cyvex-blue/10 to-cyvex-violet/15 blur-2xl" />
+							<div className="absolute -inset-4 -z-10 rounded-3xl bg-gradient-to-br from-cyvex-cyan/20 via-cyvex-blue/10 to-cyvex-red/15 blur-2xl" />
 							<div className="glass-strong relative overflow-hidden rounded-2xl border border-border/70 shadow-2xl">
 								{/* Window chrome */}
 								<div className="flex items-center justify-between border-border/60 border-b bg-background/30 px-4 py-2.5">
@@ -122,7 +122,7 @@ export function Hero() {
 										<div>
 											<span className="text-cyvex-cyan">cyvex@soc</span>
 											<span className="text-muted-foreground">:</span>
-											<span className="text-cyvex-violet">~</span>
+											<span className="text-cyvex-red">~</span>
 											<span className="text-muted-foreground">$ </span>
 											<span className="text-foreground/90">
 												run threat-scan --target=client.corp
@@ -176,12 +176,12 @@ export function Hero() {
 											<BarRow
 												label="Identity / Access"
 												value={92}
-												color="from-cyvex-blue to-cyvex-violet"
+												color="from-cyvex-blue to-cyvex-red"
 											/>
 											<BarRow
 												label="Threat Intel"
 												value={78}
-												color="from-cyvex-violet to-cyvex-cyan"
+												color="from-cyvex-red to-cyvex-cyan"
 											/>
 										</div>
 
@@ -212,7 +212,7 @@ export function Hero() {
 								</div>
 							</div>
 							<div className="absolute -top-4 -right-4 hidden animate-float rounded-xl border border-border/70 bg-background/80 px-3 py-2 shadow-xl backdrop-blur [animation-delay:-3s] sm:flex sm:items-center sm:gap-2">
-								<span className="grid size-8 place-items-center rounded-lg bg-cyvex-violet/15 text-cyvex-violet">
+								<span className="grid size-8 place-items-center rounded-lg bg-cyvex-red/15 text-cyvex-red">
 									<Activity className="size-4" />
 								</span>
 								<div className="text-left">
@@ -234,7 +234,7 @@ export function Hero() {
 							className="bg-background/60 px-5 py-6 backdrop-blur"
 						>
 							<div className="font-semibold text-2xl tracking-tight sm:text-3xl">
-								<span className="text-gradient-cyber">{s.value}</span>
+								<span className="text-cyvex-blue">{s.value}</span>
 							</div>
 							<div className="mt-1 text-muted-foreground text-xs sm:text-sm">
 								{s.label}

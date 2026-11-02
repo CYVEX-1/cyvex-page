@@ -26,7 +26,7 @@ export function CTA() {
 					>
 						<div className="mask-radial-fade absolute inset-0 bg-grid-sm opacity-40" />
 						<div className="absolute -top-32 left-1/2 h-[420px] w-[820px] -translate-x-1/2 animate-aurora rounded-full bg-cyvex-cyan/20 blur-3xl" />
-						<div className="absolute right-0 -bottom-32 h-[360px] w-[520px] animate-aurora rounded-full bg-cyvex-violet/15 blur-3xl [animation-delay:-5s]" />
+						<div className="absolute right-0 -bottom-32 h-[360px] w-[520px] animate-aurora rounded-full bg-cyvex-red/15 blur-3xl [animation-delay:-5s]" />
 					</div>
 
 					<div className="grid gap-10 lg:grid-cols-[1.2fr_1fr] lg:items-center lg:gap-14">
@@ -36,7 +36,7 @@ export function CTA() {
 							</span>
 							<h2 className="mt-5 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
 								Receba uma{" "}
-								<span className="text-gradient-cyber">
+								<span className="text-cyvex-blue">
 									análise de segurança
 								</span>{" "}
 								da Cyvex.

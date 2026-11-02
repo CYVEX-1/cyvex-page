@@ -23,7 +23,7 @@ export function CyberBg({ className, variant = "grid" }: CyberBgProps) {
 				<>
 					<div className="absolute -top-40 left-1/2 h-[520px] w-[820px] -translate-x-1/2 animate-aurora rounded-full bg-cyvex-cyan/15 blur-3xl" />
 					<div className="absolute top-1/3 -left-32 h-[420px] w-[420px] animate-aurora rounded-full bg-cyvex-blue/15 blur-3xl [animation-delay:-4s]" />
-					<div className="absolute right-0 bottom-0 h-[420px] w-[420px] translate-x-1/4 translate-y-1/4 animate-aurora rounded-full bg-cyvex-violet/12 blur-3xl [animation-delay:-8s]" />
+					<div className="absolute right-0 bottom-0 h-[420px] w-[420px] translate-x-1/4 translate-y-1/4 animate-aurora rounded-full bg-cyvex-red/12 blur-3xl [animation-delay:-8s]" />
 				</>
 			)}
 

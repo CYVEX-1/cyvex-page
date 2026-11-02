@@ -26,7 +26,7 @@ export function MinhaSecao() {
 
         {/* Heading */}
         <h2 className="mt-5 text-balance text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
-          Título com <span className="text-gradient-cyber">destaque</span>.
+          Título com <span className="text-cyvex-blue">destaque</span>.
         </h2>
 
         {/* Subtítulo */}

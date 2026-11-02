@@ -45,6 +45,7 @@
 	--cyvex-cyan: oklch(0.78 0.16 210);
 	--cyvex-cyan-strong: oklch(0.72 0.19 215);
 	--cyvex-blue: oklch(0.58 0.18 245);
+	--cyvex-red: oklch(62.793% 0.25768 29.223);
 	--cyvex-violet: oklch(0.62 0.2 290);
 	--cyvex-grid: oklch(0.92 0.005 240 / 0.6);
 }
@@ -87,6 +88,7 @@
 	--cyvex-cyan: oklch(0.82 0.16 205);
 	--cyvex-cyan-strong: oklch(0.88 0.17 200);
 	--cyvex-blue: oklch(0.65 0.18 245);
+	--cyvex-red: oklch(62.793% 0.25768 29.223);
 	--cyvex-violet: oklch(0.68 0.2 290);
 	--cyvex-grid: oklch(0.97 0.005 240 / 0.06);
 }
@@ -129,7 +131,7 @@
 	--color-cyvex-cyan: var(--cyvex-cyan);
 	--color-cyvex-cyan-strong: var(--cyvex-cyan-strong);
 	--color-cyvex-blue: var(--cyvex-blue);
-	--color-cyvex-violet: var(--cyvex-violet);
+	--color-cyvex-red: var(--cyvex-red);
 	--color-cyvex-grid: var(--cyvex-grid);
 	--radius-sm: calc(var(--radius) - 4px);
 	--radius-md: calc(var(--radius) - 2px);

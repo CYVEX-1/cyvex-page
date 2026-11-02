@@ -77,7 +77,7 @@ export function Differentials() {
 					</span>
 					<h2 className="mt-5 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
 						Por que líderes confiam na{" "}
-						<span className="text-gradient-cyber">Cyvex</span>.
+						<span className="text-cyvex-blue">Cyvex</span>.
 					</h2>
 					<p className="mt-5 text-pretty text-base text-muted-foreground leading-relaxed sm:text-lg">
 						Combinamos pessoas, processos e tecnologia em uma operação enxuta,

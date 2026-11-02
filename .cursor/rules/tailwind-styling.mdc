@@ -18,14 +18,14 @@ Use **sempre** os tokens semânticos, nunca cores hardcoded:
 | `border-border`             | bordas padrão                    |
 | `bg-cyvex-cyan` / `text-cyvex-cyan-strong` | acento primário (cyan) |
 | `bg-cyvex-blue`             | acento secundário (azul profundo)|
-| `bg-cyvex-violet`           | acento Red Team                  |
+| `bg-cyvex-red`           | acento Red Team                  |
 
 ❌ Não use `text-blue-500`, `bg-zinc-900` etc. — sempre tokens da marca.
 
 ## Utilitários custom disponíveis
 
 - `glass` / `glass-strong` — glassmorphism (backdrop-blur + bg semi-transparente)
-- `text-gradient-cyber` / `text-gradient-soft` — texto em gradiente
+- `text-cyvex-blue` / `text-gradient-soft` — texto em gradiente
 - `bg-grid` / `bg-grid-sm` / `bg-dots` — backgrounds tecnológicos
 - `bg-aurora` — gradientes radiais decorativos
 - `card-cyber` — card com hover (border glow, translateY)

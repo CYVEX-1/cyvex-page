@@ -79,7 +79,7 @@ export function RedTeam() {
 				className="pointer-events-none absolute inset-0 -z-10 overflow-hidden"
 			>
 				<div className="mask-radial-fade absolute inset-0 bg-grid opacity-40" />
-				<div className="absolute -top-32 left-1/4 h-[460px] w-[760px] -translate-x-1/2 animate-aurora rounded-full bg-cyvex-violet/14 blur-3xl" />
+				<div className="absolute -top-32 left-1/4 h-[460px] w-[760px] -translate-x-1/2 animate-aurora rounded-full bg-cyvex-red/14 blur-3xl" />
 				<div className="absolute right-0 bottom-0 h-[420px] w-[420px] animate-aurora rounded-full bg-cyvex-blue/12 blur-3xl [animation-delay:-6s]" />
 				<div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent" />
 				<div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-background to-transparent" />
@@ -88,13 +88,13 @@ export function RedTeam() {
 			<div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
 				<div className="grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:items-end">
 					<div>
-						<span className="inline-flex items-center gap-2 rounded-full border border-cyvex-violet/30 bg-cyvex-violet/10 px-3 py-1 font-medium text-cyvex-violet text-xs">
-							<span className="size-1.5 rounded-full bg-cyvex-violet" /> Red
+						<span className="inline-flex items-center gap-2 rounded-full border border-cyvex-red/30 bg-cyvex-red/10 px-3 py-1 font-medium text-cyvex-red text-xs">
+							<span className="size-1.5 rounded-full bg-cyvex-red" /> Red
 							Team
 						</span>
 						<h2 className="mt-4 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
 							Pensamos como o{" "}
-							<span className="text-gradient-cyber">adversário</span>. Antes que
+							<span className="text-cyvex-red">adversário</span>. Antes que
 							ele apareça.
 						</h2>
 					</div>
@@ -116,7 +116,7 @@ export function RedTeam() {
 									className="card-cyber group/r relative flex h-full flex-col gap-3 p-5"
 								>
 									<div className="flex items-center justify-between">
-										<span className="grid size-10 place-items-center rounded-lg border border-cyvex-violet/30 bg-cyvex-violet/10 text-cyvex-violet transition-transform group-hover/r:scale-110">
+										<span className="grid size-10 place-items-center rounded-lg border border-cyvex-red/30 bg-cyvex-red/10 text-cyvex-red transition-transform group-hover/r:scale-110">
 											<Icon className="size-5" />
 										</span>
 										<span className="rounded-full border border-border/70 px-2 py-0.5 font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
@@ -134,7 +134,7 @@ export function RedTeam() {
 									<div className="mt-auto flex items-center gap-1 font-mono text-[10px] text-muted-foreground/70 uppercase tracking-widest">
 										<span>op_{String(idx + 1).padStart(3, "0")}</span>
 										<span>•</span>
-										<span className="text-cyvex-violet/80">authorized</span>
+										<span className="text-cyvex-red/80">authorized</span>
 									</div>
 								</article>
 							),
@@ -154,7 +154,7 @@ export function RedTeam() {
 								<span className="font-mono text-[10px] text-muted-foreground uppercase tracking-widest">
 									redteam@cyvex — engagement
 								</span>
-								<span className="text-[10px] text-cyvex-violet">
+								<span className="text-[10px] text-cyvex-red">
 									● scope: authorized
 								</span>
 							</div>
@@ -180,11 +180,11 @@ export function RedTeam() {
 								<p className="text-muted-foreground">
 									[*] Phase 3 · Lateral Movement
 								</p>
-								<p className="text-cyvex-violet/90">
+								<p className="text-cyvex-red/90">
 									{" "}
 									→ privilege escalation: SYSTEM
 								</p>
-								<p className="text-cyvex-violet/90">
+								<p className="text-cyvex-red/90">
 									{" "}
 									→ 3 servidores comprometidos (PoC)
 								</p>
@@ -196,8 +196,8 @@ export function RedTeam() {
 									✓ relatório executivo gerado
 								</p>
 								<p className="mt-3 flex items-center gap-2 text-foreground/90">
-									<span className="text-cyvex-violet">redteam@cyvex:~$</span>
-									<span className="inline-block h-4 w-2 animate-blink bg-cyvex-violet" />
+									<span className="text-cyvex-red">redteam@cyvex:~$</span>
+									<span className="inline-block h-4 w-2 animate-blink bg-cyvex-red" />
 								</p>
 							</div>
 						</div>
@@ -205,7 +205,7 @@ export function RedTeam() {
 						{/* Last service card with emphasis */}
 						<article className="card-cyber relative overflow-hidden p-6">
 							<div className="flex items-start gap-4">
-								<span className="grid size-11 place-items-center rounded-xl border border-cyvex-violet/30 bg-cyvex-violet/10 text-cyvex-violet">
+								<span className="grid size-11 place-items-center rounded-xl border border-cyvex-red/30 bg-cyvex-red/10 text-cyvex-red">
 									<Bug className="size-5" />
 								</span>
 								<div className="flex-1">
@@ -260,7 +260,7 @@ function Line({
 }) {
 	return (
 		<p>
-			<span className="text-cyvex-violet">{prompt}</span>
+			<span className="text-cyvex-red">{prompt}</span>
 			<span className="text-muted-foreground">:~$</span>{" "}
 			<span className="text-foreground/90">{children}</span>
 		</p>

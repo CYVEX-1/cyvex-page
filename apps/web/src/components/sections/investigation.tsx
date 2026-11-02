@@ -95,7 +95,7 @@ export function Investigation() {
 						Investigação Social
 					</span>
 					<h2 className="mt-5 text-balance font-semibold text-3xl tracking-tight sm:text-4xl lg:text-5xl">
-						<span className="text-gradient-cyber">Inteligência digital</span>{" "}
+						<span className="text-cyvex-blue">Inteligência digital</span>{" "}
 						aplicada à proteção de pessoas e organizações.
 					</h2>
 					<p className="mt-5 text-pretty text-base text-muted-foreground leading-relaxed sm:text-lg">
